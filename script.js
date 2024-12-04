@@ -14,14 +14,14 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Previne o comportamento padrão do formulário
 
     // Obtém os dados do formulário de login
-    const email = document.getElementById('loginEmail').value;
+    const username = document.getElementById('loginEmail').value;
     const senha = document.getElementById('loginSenha').value;
 
     // Envia uma requisição AJAX para o login
     fetch('/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, senha })
+        body: JSON.stringify({ username, senha })
     })
     .then(response => response.json())
     .then(data => {
@@ -38,14 +38,14 @@ document.getElementById('cadastroForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Previne o comportamento padrão do formulário
 
     // Obtém os dados do formulário de cadastro
-    const email = document.getElementById('cadastroEmail').value;
+    const username = document.getElementById('cadastroEmail').value;
     const senha = document.getElementById('cadastroSenha').value;
 
     // Envia uma requisição AJAX para o cadastro
     fetch('/cadastro', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, senha })
+        body: JSON.stringify({ username, senha })
     })
     .then(response => response.json())
     .then(data => {
